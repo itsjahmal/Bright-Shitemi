@@ -1,5 +1,6 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, ArrowUp } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const TikTokIcon = ({ size = 18, className = "" }: { size?: number, className?: string }) => (
   <svg
@@ -19,40 +20,46 @@ const TikTokIcon = ({ size = 18, className = "" }: { size?: number, className?: 
 );
 
 const Footer: React.FC = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const socialLinks = {
     facebook: "https://www.facebook.com/share/1A6s29zxBE/?mibextid=wwXIfr",
-    twitter: "https://x.com/shitemibright?s=21",
-    instagram: "https://www.instagram.com/dagonorth01?igsh=dHQ0NjAyY3ppdW5m&utm_source=qr",
+    twitter: "https://x.com/Bright_Shitemi",
+    instagram: "https://www.instagram.com/brightshitemi/",
     tiktok: "https://www.tiktok.com/@bright.shitemi?_r=1&_t=ZS-91kbIzfXbdQ",
-    linkedin: "https://www.linkedin.com/in/bright-shitemi?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+    linkedin: "https://www.linkedin.com/in/bright-shitemi"
   };
 
   return (
-    <footer className="bg-gray-100 py-8 border-t border-gray-200 mt-auto">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="text-gray-600 text-sm text-center md:text-left">
-          <p>Copyright © 2025 Bright Shitemi. Built by <span className="underline decoration-gray-400 cursor-pointer">Rojam</span></p>
-        </div>
-        
-        <div className="flex items-center gap-6">
-          <div className="flex gap-4 flex-wrap justify-center">
-            <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-brand-maroon transition-colors"><Facebook size={18} /></a>
-            <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-brand-maroon transition-colors"><Twitter size={18} /></a>
-            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-brand-maroon transition-colors"><Instagram size={18} /></a>
-            <a href={socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-brand-maroon transition-colors"><TikTokIcon size={18} /></a>
-            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-brand-maroon transition-colors"><Linkedin size={18} /></a>
+    <footer 
+      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+      className="mt-auto bg-gray-100 border-t border-gray-200"
+    >
+      <div className="bg-white py-10 border-b border-gray-100">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-gray-400 text-[10px] md:text-xs max-w-2xl mx-auto leading-relaxed font-medium uppercase tracking-wider">
+            This website serves as the official campaign platform for Bright Shitemi, Member of Parliament Candidate for Dagoretti North (2027).
+          </p>
+          <div className="mt-4 flex justify-center gap-6">
+            <Link to="/sitemap" className="text-gray-400 hover:text-brand-maroon text-[10px] md:text-xs font-bold uppercase tracking-widest transition-colors">Sitemap</Link>
           </div>
-          <button 
-            onClick={scrollToTop}
-            className="bg-brand-maroon text-white p-2 rounded-full hover:bg-red-900 transition-colors shadow-lg"
-            aria-label="Scroll to top"
-          >
-            <ArrowUp size={18} />
-          </button>
+        </div>
+      </div>
+
+      <div className="py-10">
+        <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row justify-between items-center gap-6 md:gap-4">
+          <div className="text-gray-600 text-sm text-center md:text-left">
+            <p>
+              Copyright © 2025 Bright Shitemi. Built by{' '}
+              <a href="tel:0745620206" className="underline hover:text-brand-maroon transition-colors">Rojam</a>
+            </p>
+          </div>
+          
+          <div className="flex gap-4 flex-wrap justify-center">
+            <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-600 hover:text-brand-maroon transition-colors"><Facebook size={18} /></a>
+            <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" aria-label="X" className="text-gray-600 hover:text-brand-maroon transition-colors"><Twitter size={18} /></a>
+            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-600 hover:text-brand-maroon transition-colors"><Instagram size={18} /></a>
+            <a href={socialLinks.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-gray-600 hover:text-brand-maroon transition-colors"><TikTokIcon size={18} /></a>
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-600 hover:text-brand-maroon transition-colors"><Linkedin size={18} /></a>
+          </div>
         </div>
       </div>
     </footer>

@@ -15,3 +15,13 @@ export interface SocialLink {
   platform: 'facebook' | 'twitter' | 'instagram';
   url: string;
 }
+
+// Global Types
+declare global {
+  interface Window {
+    AOS: {
+      init: (options?: any) => void;
+      refresh: () => void;
+    };
+  }
+}
