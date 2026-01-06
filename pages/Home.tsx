@@ -277,13 +277,13 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Optimized for mobile framing and iOS Safari Dynamic Viewport */}
+      {/* Hero Section - Optimized for mobile framing and face priority */}
       <section className="relative h-[90dvh] w-full bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://i.ibb.co/ym0WdZcM/Bright-Safe-Overlay-Mobile-1080x1920.webp" 
             alt="Bright Shitemi - Member of Parliament Candidate for Dagoretti North (2027)" 
-            className="w-full h-full object-cover object-[82%_center] lg:hidden block"
+            className="w-full h-full object-cover object-[100%_center] lg:hidden block"
           />
           <img 
             src="https://i.ibb.co/99kgrhbM/Bright-Safe-Overlay-Desktop-1920x1080.webp" 
@@ -291,16 +291,17 @@ const Home: React.FC = () => {
             className="w-full h-full object-cover object-center hidden lg:block"
           />
         </div>
-        {/* Enhanced gradient for superior text contrast on mobile */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 md:via-slate-900/30 to-transparent z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 md:from-transparent to-transparent z-10"></div>
+        {/* Adjusted gradients: Reduced bottom-up intensity to clear face, kept side gradient for text */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/20 to-transparent z-10"></div>
         
         <div className="container mx-auto px-4 h-full relative z-20 flex flex-col items-start justify-center pt-20">
             <div className="max-w-2xl text-white" data-aos="fade-right" data-aos-duration="1200">
                 <span className="inline-block px-4 py-1.5 bg-brand-maroon/90 backdrop-blur rounded-full text-xs font-bold tracking-widest uppercase mb-6 shadow-lg shadow-black/20">
                   The Leader Dagoretti North Needs
                 </span>
-                <h1 className="text-6xl md:text-8xl font-serif font-bold mb-6 leading-[0.9] tracking-tight drop-shadow-md">
+                {/* Fixed mobile overlap: reduced font size and constrained width on mobile */}
+                <h1 className="text-5xl md:text-8xl font-serif font-bold mb-6 leading-[0.9] tracking-tight drop-shadow-md max-w-[75%] md:max-w-none">
                   Bright <br/> Shitemi
                 </h1>
                 <div className="w-32 h-1.5 bg-brand-maroon mb-6 rounded-full shadow-sm"></div>
@@ -361,7 +362,7 @@ const Home: React.FC = () => {
 
       {/* Impact Stats */}
       <section className="py-20 bg-brand-maroon text-white relative">
-        <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
@@ -382,8 +383,8 @@ const Home: React.FC = () => {
       {/* Bright's Why Section */}
       <section className="py-24 bg-white overflow-hidden scroll-mt-20">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="flex flex-col lg:flex-row gap-16 items-start mb-20">
-            <div className="lg:w-1/2" data-aos="fade-right">
+          <div className="flex flex-col items-center">
+            <div className="max-w-4xl w-full text-center" data-aos="fade-up">
               <span className="text-brand-maroon font-black text-xs uppercase tracking-[0.3em] block mb-4">The Catalyst for Change</span>
               <h2 className="text-5xl md:text-7xl font-serif font-bold text-gray-900 mb-8 leading-[1.1]">
                 Bright's <span className="text-brand-maroon italic">Why</span>
@@ -397,147 +398,11 @@ const Home: React.FC = () => {
                 </p>
                 <div className="p-8 bg-gray-50 border-l-8 border-brand-maroon rounded-3xl mt-8">
                   <p className="font-serif italic text-gray-900 text-2xl">
-                    "We cannot ignore that many in our community face tenure insecurity and low trust in security authorities. My 'Why' is rooted in changing this reality."
+                    "The world we need won’t be built by (wo)men loyal to the world we have."
                   </p>
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2 grid grid-cols-2 gap-4" data-aos="fade-left">
-              <div className="space-y-4 pt-12">
-                 <div className="rounded-3xl overflow-hidden shadow-xl aspect-[4/5] relative group bg-gray-100 border border-gray-200 p-8 flex flex-col justify-end">
-                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#800000_1px,transparent_1px)] [background-size:20px_20px]"></div>
-                    <div className="relative z-10">
-                      <Zap className="text-brand-maroon mb-4" size={32} />
-                      <h4 className="text-gray-900 font-bold text-lg mb-2">Systemic Inequality</h4>
-                      <p className="text-gray-500 text-sm">Bridging the socio-economic divide across our diverse communities.</p>
-                    </div>
-                 </div>
-                 <div className="bg-brand-maroon p-8 rounded-3xl text-white shadow-2xl relative overflow-hidden group">
-                    <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/graph-paper.png')]"></div>
-                    <AlertCircle size={32} className="mb-4 text-white/50 group-hover:scale-110 transition-transform" />
-                    <p className="text-lg font-serif font-bold">Unlocking Potential</p>
-                    <p className="text-sm text-white/70 mt-2">Empowering the youth to lead the 3rd Liberation.</p>
-                 </div>
-              </div>
-              <div className="space-y-4">
-                 <div className="bg-gray-900 p-8 rounded-3xl text-white h-48 flex flex-col justify-end relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/topography.png')]"></div>
-                    <p className="text-4xl font-serif font-bold text-brand-maroon">WHY?</p>
-                    <p className="text-xs font-black uppercase tracking-widest text-gray-400 mt-2">Dignity is a Right, not a Privilege.</p>
-                 </div>
-                 <div className="rounded-3xl overflow-hidden shadow-xl aspect-[4/6] relative group bg-gray-50 border border-gray-100 p-8 flex flex-col justify-end">
-                    <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                    <div className="relative z-10">
-                      <Globe className="text-brand-maroon mb-4" size={32} />
-                      <h4 className="text-gray-900 font-bold text-lg mb-2">Regional Stability</h4>
-                      <p className="text-gray-500 text-sm">Ensuring tenure security and community peace for all residents.</p>
-                    </div>
-                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* New Creative Challenge Section: Problem-Vision Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Infrastructure",
-                subtitle: "The Environment",
-                icon: <Building2 size={32} />,
-                problem: "Poor drainage, flooding, and overcrowding in Kawangware and Gatina.",
-                vision: "Modern sanitation hubs, paved interior roads, and sustainable urban waste management.",
-                bgColor: "bg-slate-50",
-                accentColor: "text-blue-600",
-                points: ["Inadequate housing", "Poor road planning", "Waste disposal lack", "Flooding hazards"]
-              },
-              {
-                title: "Public Health",
-                subtitle: "Well-being",
-                icon: <Stethoscope size={32} />,
-                problem: "Outbreaks of waterborne diseases and limited specialized healthcare centers.",
-                vision: "Equipped primary clinics, community health volunteer networks, and clean water access.",
-                bgColor: "bg-emerald-50",
-                accentColor: "text-emerald-600",
-                points: ["Waterborne diseases", "Respiratory infections", "Limited clean water", "Clinic shortages"]
-              },
-              {
-                title: "Economy",
-                subtitle: "Socio-Economics",
-                icon: <Briefcase size={32} />,
-                problem: "High unemployment rates and barriers to trade for local market vendors.",
-                vision: "Digital talent hubs, micro-finance for SMEs, and localized industrial upskilling.",
-                bgColor: "bg-orange-50",
-                accentColor: "text-orange-600",
-                points: ["Persistent poverty", "Unemployment gap", "Loan accessibility", "Language barriers"]
-              },
-              {
-                title: "Governance",
-                subtitle: "Security",
-                icon: <ShieldAlert size={32} />,
-                problem: "Tenure insecurity and low trust in public security authorities.",
-                vision: "Community policing, title deed advocacy, and radical transparency in CDF usage.",
-                bgColor: "bg-brand-maroon/5",
-                accentColor: "text-brand-maroon",
-                points: ["Low security trust", "Illegal evictions", "Tenure insecurity", "Lack of protection"]
-              }
-            ].map((challenge, i) => (
-              <div 
-                key={i} 
-                className={`group relative rounded-[2.5rem] p-8 border border-gray-100 shadow-xl flex flex-col h-[520px] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden ${challenge.bgColor}`} 
-                data-aos="fade-up" 
-                data-aos-delay={i * 100}
-              >
-                {/* Decorative Pattern Background */}
-                <div className="absolute top-0 right-0 w-48 h-48 opacity-5 -mr-16 -mt-16 bg-current text-gray-900 rounded-full blur-3xl group-hover:opacity-10 transition-opacity"></div>
-                
-                {/* Header Content */}
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-brand-maroon group-hover:text-white bg-white ${challenge.accentColor}`}>
-                    {challenge.icon}
-                  </div>
-                  
-                  <div className="mb-6">
-                    <span className="text-xs font-black uppercase tracking-[0.2em] text-gray-400 block mb-1">{challenge.subtitle}</span>
-                    <h3 className="text-3xl font-serif font-bold text-gray-900 leading-tight">{challenge.title}</h3>
-                  </div>
-
-                  {/* Problem vs Vision Duality Content */}
-                  <div className="flex-grow space-y-6">
-                    <div className="space-y-2">
-                       <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
-                         <div className="w-1 h-1 bg-red-500 rounded-full"></div>
-                         The Challenge
-                       </span>
-                       <p className="text-gray-600 font-medium leading-relaxed">
-                         {challenge.problem}
-                       </p>
-                    </div>
-
-                    <div className="space-y-4 pt-4 border-t border-gray-200/50">
-                       <span className={`text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 ${challenge.accentColor}`}>
-                         <ArrowUpRight size={12} />
-                         The Bright Vision
-                       </span>
-                       <p className="text-gray-900 font-bold leading-relaxed text-lg">
-                         {challenge.vision}
-                       </p>
-                    </div>
-                  </div>
-
-                  {/* Detailed Points (Visible on hover in a sophisticated way) */}
-                  <div className="mt-auto flex items-center justify-between pt-6">
-                    <div className="flex -space-x-2">
-                      {challenge.points.slice(0, 3).map((_, idx) => (
-                        <div key={idx} className={`w-2 h-2 rounded-full border border-white shadow-sm ${challenge.accentColor.replace('text', 'bg')}`}></div>
-                      ))}
-                    </div>
-                    <span className="text-xs font-bold text-gray-400 flex items-center gap-1 group-hover:text-brand-maroon transition-colors">
-                      Learn policy <ArrowRight size={12} />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

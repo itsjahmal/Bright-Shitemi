@@ -24,28 +24,44 @@ const AboutBrightShitemi: React.FC = () => {
 
   return (
     <div className="pt-24 pb-20 bg-white min-h-screen">
-      {/* SEO Hero Section - Optimized for Face Visibility */}
+      {/* SEO Hero Section - Optimized for Face Visibility on Mobile */}
       <section className="container mx-auto px-4 mb-20" data-aos="fade-up">
-        <div className="bg-gray-900 rounded-[3rem] overflow-hidden relative p-8 md:p-20 text-white min-h-[450px] md:min-h-[500px] flex items-center">
+        <div className="bg-gray-900 rounded-[3rem] overflow-hidden relative p-8 md:p-20 text-white min-h-[700px] md:min-h-[650px] flex flex-col">
           <div className="absolute inset-0 z-0">
             <img 
-              src="https://i.ibb.co/0j8cbYSg/Bright2-0-Safe-Overlay-Desktop-1920x1080.webp" 
+              src="https://i.ibb.co/RpmwQZtP/Bright-Shitemi-Member-of-Parliament-Candidate-for-Dagoretti-North-2027.webp" 
               alt="Bright Shitemi - Member of Parliament Candidate for Dagoretti North (2027)" 
-              className="w-full h-full object-cover opacity-50 object-[85%_25%] md:object-center transition-transform duration-700"
+              className="w-full h-full object-cover opacity-100 object-[85%_10%] md:object-[80%_25%] transition-transform duration-1000"
             />
-            {/* Multi-directional gradient for maximum readability and image protection */}
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent md:bg-gradient-to-r md:from-gray-900 md:via-gray-900/60 md:to-transparent"></div>
+            {/* Multi-layered gradient: 
+                1. Heavy bottom-up for mobile text legibility.
+                2. Stronger left-to-right for desktop text legibility.
+            */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent md:bg-gradient-to-r md:from-black/90 md:via-black/20 md:to-transparent"></div>
           </div>
-          <div className="relative z-10 max-w-4xl">
-            <div className="inline-block px-4 py-1 bg-brand-maroon text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-6">
-              Official Candidate Profile
+
+          {/* Interactive Layer */}
+          <div className="relative z-10 flex flex-col h-full flex-grow">
+            {/* Top: Official Badge - Positioned clearly above the head region on mobile */}
+            <div className="pt-2 md:pt-0">
+              <div className="inline-block px-4 py-1.5 bg-brand-maroon text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full shadow-2xl">
+                Official Candidate Profile
+              </div>
             </div>
-            <h1 className="text-4xl md:text-7xl font-serif font-bold leading-tight mb-6 drop-shadow-sm">
-              Bright Shitemi | Member of Parliament Candidate for Dagoretti North (2027)
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed">
-              Kenyan politician and Member of Parliament Candidate for Dagoretti North (2027), driving social impact and accountability.
-            </p>
+
+            {/* Spacer: Pushes content to the bottom on mobile */}
+            <div className="flex-grow"></div>
+
+            {/* Bottom: Title & Description */}
+            <div className="max-w-3xl pb-4 md:pb-0">
+              <h1 className="text-4xl md:text-7xl font-serif font-bold leading-tight mb-4 md:mb-6 drop-shadow-2xl">
+                <span className="md:hidden">Bright Shitemi | MP Candidate (2027)</span>
+                <span className="hidden md:inline">Bright Shitemi | Member of Parliament Candidate for Dagoretti North (2027)</span>
+              </h1>
+              <p className="text-lg md:text-2xl text-gray-100 font-light max-w-xl leading-relaxed drop-shadow-lg">
+                Kenyan politician and Member of Parliament Candidate for Dagoretti North (2027), driving social impact and accountability.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -248,7 +264,7 @@ const AboutBrightShitemi: React.FC = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <ShieldCheck className="shrink-0 mt-1" size={18} />
-                    <span className="text-sm"><strong>Accountability:</strong> Weekly transparency reports on constituency funds.</span>
+                    <span className="text-sm"><strong>Accountability:</strong> Biannual transparency reports on constituency funds.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <ShieldCheck className="shrink-0 mt-1" size={18} />

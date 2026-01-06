@@ -15,7 +15,11 @@ import {
   Gamepad2,
   Users,
   Briefcase,
-  MessageCircle
+  MessageCircle,
+  Building2,
+  Stethoscope,
+  ShieldAlert,
+  ArrowUpRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -192,10 +196,10 @@ const MyStory: React.FC = () => {
               </div>
               <div className="space-y-6 md:space-y-8 text-gray-300 leading-relaxed text-base md:text-lg">
                 <p>
-                  Bright believes that <strong>2027</strong> is a pivotal moment in Kenya’s political and economic transformation journey, as it presents an opportunity to usher in Kenya’s 3rd Liberation.
+                  Bright believes that 2027 is a pivotal moment in Kenya’s political and economic transformation journey, as it presents an opportunity to usher in Kenya’s 3rd Liberation.
                 </p>
                 <p>
-                  This conviction led Mr. Shitemi to start <strong>Kikao</strong>. This organization supports new-generation aspirants to find a path into mainstream politics.
+                  This conviction led Mr. Shitemi to start <strong>Kikao</strong>. This organization supports new-generation aspirants to find a path into mainstream politics and conducts national civic education.
                 </p>
                 <div className="bg-white/5 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 mt-6 md:mt-8">
                   <p className="text-lg md:text-xl font-serif italic text-white mb-4 md:mb-6">
@@ -227,7 +231,7 @@ const MyStory: React.FC = () => {
       {/* Awards & Accomplishments */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start mb-16 md:mb-24">
             <div className="w-full lg:w-1/3">
               <div className="lg:sticky lg:top-28 text-center lg:text-left">
                 <div className="inline-block p-4 md:p-6 bg-brand-maroon rounded-2xl md:rounded-3xl text-white mb-6 md:mb-8 shadow-xl">
@@ -268,21 +272,140 @@ const MyStory: React.FC = () => {
                   ))}
                 </div>
               </div>
-              
-              <div className="p-8 md:p-16 bg-gray-900 text-white rounded-[2.5rem] md:rounded-[4rem] relative overflow-hidden" data-aos="fade-up">
-                <div className="absolute top-0 right-0 p-6 md:p-8 opacity-10">
-                  <Briefcase className="w-16 h-16 md:w-32 md:h-32" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4 md:mb-6 relative z-10">The Serial Entrepreneur</h3>
-                <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-6 md:mb-8 relative z-10">
-                  Mr. Shitemi is passionate about women and youth and, above all, uplifting communities. Currently leading <strong>Kikao</strong>, a social movement driving leadership in Kenya.
-                </p>
-                <div className="flex items-center gap-4 relative z-10">
-                   <div className="h-px bg-brand-maroon flex-grow"></div>
-                   <p className="text-brand-maroon font-serif italic text-lg md:text-xl">"We can rewrite the story."</p>
-                </div>
+            </div>
+          </div>
+
+          {/* Full-Width Entrepreneur & Image Section */}
+          <div id="entrepreneur" className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12 mb-24">
+            {/* Image First */}
+            <div className="rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl relative h-full min-h-[400px] lg:min-h-[500px]" data-aos="fade-right">
+              <img 
+                src="https://i.ibb.co/rD9YpV0/Bright-Shitemi-Dagoretti-North.webp" 
+                alt="Bright Shitemi - Dagoretti North Leadership" 
+                className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-10">
+                 <span className="bg-brand-maroon text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">
+                   On the Ground
+                 </span>
               </div>
             </div>
+            
+            {/* Serial Entrepreneur Text Block Second */}
+            <div className="p-8 md:p-16 bg-gray-900 text-white rounded-[2.5rem] md:rounded-[3rem] relative overflow-hidden h-full flex flex-col justify-center" data-aos="fade-left" data-aos-delay="100">
+              <div className="absolute top-0 right-0 p-6 md:p-8 opacity-10">
+                <Briefcase className="w-16 h-16 md:w-32 md:h-32" />
+              </div>
+              <h3 className="text-3xl md:text-5xl font-serif font-bold mb-6 md:mb-8 relative z-10 leading-tight">The Serial <br className="hidden md:block"/>Entrepreneur</h3>
+              <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-8 md:mb-12 relative z-10">
+                Mr. Shitemi is passionate about women and youth and, above all, uplifting communities. Currently leading <strong>Kikao</strong>, a social movement driving leadership in Kenya.
+              </p>
+              <div className="flex items-center gap-6 relative z-10 mt-auto">
+                 <div className="h-px bg-brand-maroon flex-grow"></div>
+                 <p className="text-brand-maroon font-serif italic text-xl md:text-3xl">"We can rewrite the story."</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Strategic Framework Section: Positioned Below Serial Entrepreneur */}
+          <div className="mb-24">
+             <div className="text-center mb-16" data-aos="fade-up">
+                <span className="text-brand-maroon font-black text-xs uppercase tracking-[0.3em] block mb-4">Strategic Framework</span>
+                <h2 className="text-4xl md:text-6xl font-serif font-bold text-gray-900">Challenges & <span className="text-brand-maroon italic">Vision</span></h2>
+             </div>
+             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                  {
+                    title: "Infrastructure",
+                    subtitle: "The Environment",
+                    icon: <Building2 size={32} />,
+                    problem: "Poor drainage, flooding, and overcrowding in Kawangware and Gatina.",
+                    vision: "Modern sanitation hubs, paved interior roads, and sustainable urban waste management.",
+                    bgColor: "bg-slate-50",
+                    accentColor: "text-blue-600",
+                    points: ["Inadequate housing", "Poor road planning", "Waste disposal lack", "Flooding hazards"]
+                  },
+                  {
+                    title: "Public Health",
+                    subtitle: "Well-being",
+                    icon: <Stethoscope size={32} />,
+                    problem: "Outbreaks of waterborne diseases and limited specialized healthcare centers.",
+                    vision: "Equipped primary clinics, community health volunteer networks, and clean water access.",
+                    bgColor: "bg-emerald-50",
+                    accentColor: "text-emerald-600",
+                    points: ["Waterborne diseases", "Respiratory infections", "Limited clean water", "Clinic shortages"]
+                  },
+                  {
+                    title: "Economy",
+                    subtitle: "Socio-Economics",
+                    icon: <Briefcase size={32} />,
+                    problem: "High unemployment rates and barriers to trade for local market vendors.",
+                    vision: "Digital talent hubs, micro-finance for SMEs, and localized industrial upskilling.",
+                    bgColor: "bg-orange-50",
+                    accentColor: "text-orange-600",
+                    points: ["Persistent poverty", "Unemployment gap", "Loan accessibility", "Language barriers"]
+                  },
+                  {
+                    title: "Governance",
+                    subtitle: "Security",
+                    icon: <ShieldAlert size={32} />,
+                    problem: "Tenure insecurity and low trust in public security authorities.",
+                    vision: "Community policing, title deed advocacy, and radical transparency in CDF usage.",
+                    bgColor: "bg-brand-maroon/5",
+                    accentColor: "text-brand-maroon",
+                    points: ["Low security trust", "Illegal evictions", "Tenure insecurity", "Lack of protection"]
+                  }
+                ].map((challenge, i) => (
+                  <div 
+                    key={i} 
+                    className={`group relative rounded-[2.5rem] p-8 border border-gray-100 shadow-xl flex flex-col h-[520px] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden ${challenge.bgColor}`} 
+                    data-aos="fade-up" 
+                    data-aos-delay={i * 100}
+                  >
+                    <div className="absolute top-0 right-0 w-48 h-48 opacity-5 -mr-16 -mt-16 bg-current text-gray-900 rounded-full blur-3xl group-hover:opacity-10 transition-opacity"></div>
+                    <div className="relative z-10 flex flex-col h-full">
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-brand-maroon group-hover:text-white bg-white ${challenge.accentColor}`}>
+                        {challenge.icon}
+                      </div>
+                      <div className="mb-6">
+                        <span className="text-xs font-black uppercase tracking-[0.2em] text-gray-400 block mb-1">{challenge.subtitle}</span>
+                        <h3 className="text-3xl font-serif font-bold text-gray-900 leading-tight">{challenge.title}</h3>
+                      </div>
+                      <div className="flex-grow space-y-6">
+                        <div className="space-y-2">
+                           <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
+                             <div className="w-1 h-1 bg-red-500 rounded-full"></div>
+                             The Challenge
+                           </span>
+                           <p className="text-gray-600 font-medium leading-relaxed">
+                             {challenge.problem}
+                           </p>
+                        </div>
+                        <div className="space-y-4 pt-4 border-t border-gray-200/50">
+                           <span className={`text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 ${challenge.accentColor}`}>
+                             <ArrowUpRight size={12} />
+                             The Bright Vision
+                           </span>
+                           <p className="text-gray-900 font-bold leading-relaxed text-lg">
+                             {challenge.vision}
+                           </p>
+                        </div>
+                      </div>
+                      <div className="mt-auto flex items-center justify-between pt-6">
+                        <div className="flex -space-x-2">
+                          {challenge.points.slice(0, 3).map((_, idx) => (
+                            <div key={idx} className={`w-2 h-2 rounded-full border border-white shadow-sm ${challenge.accentColor.replace('text', 'bg')}`}></div>
+                          ))}
+                        </div>
+                        <span className="text-xs font-bold text-gray-400 flex items-center gap-1 group-hover:text-brand-maroon transition-colors">
+                          Learn policy <ArrowRight size={12} />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+             </div>
           </div>
         </div>
       </section>
